@@ -27,7 +27,7 @@ exports.createPages = async ({
   actions: { createPage }}) => {
   const urlSite = 'site';
   const urlTagAmazon = 'amazon-tag'
-  const {design, categories, keywords, amazon, cookies} = await getDataByEntity({url: urlSite});
+  const {design, categories, keywords, amazon, cookies, legal = {}} = await getDataByEntity({url: urlSite});
   const { tag } = await getThirdServicesByEntity({url: urlTagAmazon, param: amazon });
   const allPages = await categories.concat(keywords);
   // Create a page for each page.
@@ -64,6 +64,14 @@ exports.createPages = async ({
     path: 'cookies',
     component: require.resolve('./src/templates/cookies.js'),
     context: {
+      cookies
+    }
+  })
+  await createPage({
+    path: 'legal',
+    component: require.resolve('./src/templates/legal.js'),
+    context: {
+      legal,
       cookies
     }
   })
