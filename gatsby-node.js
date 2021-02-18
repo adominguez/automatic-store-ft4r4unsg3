@@ -66,7 +66,7 @@ exports.createPages = async ({
     context: {
       cookies
     }
-  })
+  });
   await createPage({
     path: 'legal',
     component: require.resolve('./src/templates/legal.js'),
@@ -74,5 +74,5 @@ exports.createPages = async ({
       legal,
       cookies
     }
-  })
+  });
 };

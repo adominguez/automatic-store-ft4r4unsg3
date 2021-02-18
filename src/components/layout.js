@@ -62,15 +62,17 @@ const Layout = ({ children, cookies }) => {
         </div>
         <div className="mt-3">© {new Date().getFullYear()}, {siteName}</div>
       </footer>
-      <CookieConsent
-          enableDeclineButton
-          location="bottom"
-          buttonText={cookies.button}
-          declineButtonText="Declinar"
-          cookieName="google-analytics">
-          {cookies.content}
-        </CookieConsent>
-        <div className=" lg:w-1/5"></div>
+      {
+        cookies &&
+          <CookieConsent
+            enableDeclineButton
+            location="bottom"
+            buttonText={cookies.button}
+            declineButtonText="Declinar"
+            cookieName="google-analytics">
+            {cookies.content}
+          </CookieConsent>
+      }
     </div>
   )
 }
