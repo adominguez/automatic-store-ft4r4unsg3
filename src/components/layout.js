@@ -55,7 +55,7 @@ const Layout = ({ children, cookies }) => {
         </section>
       </main>
       <footer className="box-border flex flex-col items-center justify-center w-full p-4 text-white bg-secondary-500">
-        <div className="flex items-center justify-center space-x-3 lg:w-1/3">
+        <div className="flex space-x-3">
           <Link to="/" className="text-primary-300 hover:text-primary-600 focus:text-primary-600">Inicio</Link>
           <Link to="/legal" className="text-primary-300 hover:text-primary-600 focus:text-primary-600">Aviso legal</Link>
           <Link to="/cookies" className="text-primary-300 hover:text-primary-600 focus:text-primary-600">Cookies</Link>
